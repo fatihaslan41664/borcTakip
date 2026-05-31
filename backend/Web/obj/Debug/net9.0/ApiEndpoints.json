@@ -1,0 +1,96 @@
+[
+  {
+    "ContainingType": "Web.Controllers.AlinacaklarController",
+    "Method": "sil",
+    "RelativePath": "api/Alinacaklar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.AlinacaklarController",
+    "Method": "GetById",
+    "RelativePath": "api/Alinacaklar/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.AlinacaklarController",
+    "Method": "BorcOde",
+    "RelativePath": "api/Alinacaklar/BorcOde",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alinacaklarId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "odenenMiktar",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "hepsiniOde",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.AlinacaklarController",
+    "Method": "Ekle",
+    "RelativePath": "api/Alinacaklar/Ekle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "isim",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BorcMiktari",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tarih",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.AlinacaklarController",
+    "Method": "Listele",
+    "RelativePath": "api/Alinacaklar/Listele",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

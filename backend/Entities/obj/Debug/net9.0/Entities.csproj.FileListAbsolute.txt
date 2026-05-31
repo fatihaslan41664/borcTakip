@@ -1,0 +1,11 @@
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\bin\Debug\net9.0\Entities.deps.json
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\bin\Debug\net9.0\Entities.dll
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\bin\Debug\net9.0\Entities.pdb
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\Entities.AssemblyInfoInputs.cache
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\Entities.AssemblyInfo.cs
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\Entities.dll
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\refint\Entities.dll
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\Entities.pdb
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\ref\Entities.dll
