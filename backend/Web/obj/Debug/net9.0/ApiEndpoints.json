@@ -92,5 +92,161 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.AlinmisAlinacaklarController",
+    "Method": "Sil",
+    "RelativePath": "api/AlinmisAlinacaklar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.AlinmisAlinacaklarController",
+    "Method": "Listele",
+    "RelativePath": "api/AlinmisAlinacaklar/Listele",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.DashboardController",
+    "Method": "Get",
+    "RelativePath": "api/Dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.VerileceklerController",
+    "Method": "Sil",
+    "RelativePath": "api/Verilecekler/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.VerileceklerController",
+    "Method": "GetById",
+    "RelativePath": "api/Verilecekler/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.VerileceklerController",
+    "Method": "BorcOde",
+    "RelativePath": "api/Verilecekler/BorcOde",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "verileceklerId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "odenenMiktar",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "hepsiniOde",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.VerileceklerController",
+    "Method": "Ekle",
+    "RelativePath": "api/Verilecekler/Ekle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "isim",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BorcMiktari",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tarih",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.VerileceklerController",
+    "Method": "Listele",
+    "RelativePath": "api/Verilecekler/Listele",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.VerilmisVerileceklerController",
+    "Method": "Sil",
+    "RelativePath": "api/VerilmisVerilecekler/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.VerilmisVerileceklerController",
+    "Method": "Listele",
+    "RelativePath": "api/VerilmisVerilecekler/Listele",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

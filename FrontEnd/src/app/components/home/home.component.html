@@ -1,1 +1,52 @@
-<p>home works!</p>
+<div class="page">
+  <div class="page-header">
+    <span class="page-title"><i class="ti ti-home"></i>Genel bakış</span>
+  </div>
+
+  <div class="db-wrap" *ngIf="dashboard">
+    <div class="db-card">
+      <div class="db-title"><i class="ti ti-arrow-down-circle"></i>Alınacaklar</div>
+      <div class="donut-wrap">
+        <svg viewBox="0 0 160 160" id="donut1"></svg>
+        <div class="donut-center"><span class="donut-pct">{{ pct1 }}%</span><span class="donut-lbl">tahsil</span></div>
+      </div>
+      <div class="db-stats">
+        <div class="stat-row"><div class="stat-dot" style="background:#185FA5"></div><span class="stat-label">Tahsil edilen</span><span class="stat-value">{{ fmt(dashboard.tahsilEdilen) }}</span></div>
+        <div class="stat-row"><div class="stat-dot" style="background:#B5D4F4"></div><span class="stat-label">Bekleyen</span><span class="stat-value">{{ fmt(bekleyenAlinak) }}</span></div>
+        <div class="stat-total"><span class="stat-label" style="font-weight:500">Toplam alınacak</span><span class="stat-value">{{ fmt(dashboard.toplamAlinacak) }}</span></div>
+      </div>
+    </div>
+
+    <div class="db-card">
+      <div class="db-title"><i class="ti ti-arrow-up-circle"></i>Verilecekler</div>
+      <div class="donut-wrap">
+        <svg viewBox="0 0 160 160" id="donut2"></svg>
+        <div class="donut-center"><span class="donut-pct">{{ pct2 }}%</span><span class="donut-lbl">verildi</span></div>
+      </div>
+      <div class="db-stats">
+        <div class="stat-row"><div class="stat-dot" style="background:#0F6E56"></div><span class="stat-label">Verilmiş</span><span class="stat-value">{{ fmt(dashboard.verilmis) }}</span></div>
+        <div class="stat-row"><div class="stat-dot" style="background:#9FE1CB"></div><span class="stat-label">Bekleyen</span><span class="stat-value">{{ fmt(bekleyenVer) }}</span></div>
+        <div class="stat-total"><span class="stat-label" style="font-weight:500">Toplam verilecek</span><span class="stat-value">{{ fmt(dashboard.toplamVerilecek) }}</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="balance-card" *ngIf="dashboard">
+    <div class="balance-item">
+      <span class="balance-label"><i class="ti ti-arrow-down-circle"></i>Güncel alınacak</span>
+      <span class="balance-value blue">{{ fmt(bekleyenAlinak) }}</span>
+    </div>
+    <div class="balance-divider"></div>
+    <div class="balance-item">
+      <span class="balance-label"><i class="ti ti-arrow-up-circle"></i>Güncel verilecek</span>
+      <span class="balance-value green">{{ fmt(bekleyenVer) }}</span>
+    </div>
+    <div class="balance-divider"></div>
+    <div class="balance-item">
+      <span class="balance-label"><i class="ti ti-scale"></i>Net fark</span>
+      <span class="balance-value" [class.pozitif]="netFark >= 0" [class.negatif]="netFark < 0">{{ fmt(netFark) }}</span>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="!dashboard"><i class="ti ti-loader"></i>Yükleniyor...</div>
+</div>

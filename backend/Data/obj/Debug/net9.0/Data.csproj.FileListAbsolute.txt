@@ -13,3 +13,4 @@ C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Data\obj\Debug\net9.0\D
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Data\obj\Debug\net9.0\refint\Data.dll
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Data\obj\Debug\net9.0\Data.pdb
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Data\obj\Debug\net9.0\ref\Data.dll
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Data\obj\Debug\net9.0\Data.sourcelink.json

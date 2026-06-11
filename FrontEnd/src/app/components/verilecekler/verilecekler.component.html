@@ -1,1 +1,102 @@
-<p>verilecekler works!</p>
+<div class="page">
+  <div class="page-header">
+    <span class="page-title"><i class="ti ti-arrow-up-circle"></i>Verilecekler</span>
+    <div class="page-actions">
+      <span class="page-count">Toplam {{ filtrelenmis.length }} kayıt</span>
+      <div class="search-wrap">
+        <i class="ti ti-search"></i>
+        <input class="search-input" type="text" placeholder="İsim ara..." [(ngModel)]="aramaMetni" (input)="ara()" />
+      </div>
+      <button class="add-btn" (click)="modalAc()"><i class="ti ti-plus"></i>Yeni ekle</button>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>İsim</th><th>Borç miktarı</th><th>Tarih</th><th>#</th><th></th></tr></thead>
+      <tbody>
+        <tr *ngIf="sayfadakiKayitlar.length === 0"><td colspan="5" class="empty">Sonuç bulunamadı</td></tr>
+        <tr *ngFor="let item of sayfadakiKayitlar; let i = index">
+          <td><div class="name-cell"><span class="avatar">{{ initials(item.isim) }}</span>{{ item.isim }}</div></td>
+          <td><span class="amount">₺{{ item.borcMiktari | number:'1.2-2' }}</span></td>
+          <td><span class="date">{{ item["borcunVerildiğiTarih"] | date:'dd.MM.yyyy' }}</span></td>
+          <td>{{ (mevcutSayfa - 1) * sayfaBasiKayit + i + 1 }}</td>
+          <td>
+            <div class="actions">
+              <button class="action-btn edit" title="Borç öde" (click)="borcOdeAc(item)"><i class="ti ti-coin"></i></button>
+              <button class="action-btn delete" title="Sil" (click)="silAc(item.id)"><i class="ti ti-trash"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination" *ngIf="toplamSayfa > 1">
+    <button class="pg-btn" (click)="sayfaDegistir(mevcutSayfa - 1)" [disabled]="mevcutSayfa === 1">‹</button>
+    <button class="pg-btn" *ngFor="let p of sayfalar()" [class.active]="p === mevcutSayfa" (click)="sayfaDegistir(p)">{{ p }}</button>
+    <button class="pg-btn" (click)="sayfaDegistir(mevcutSayfa + 1)" [disabled]="mevcutSayfa === toplamSayfa">›</button>
+    <span class="pg-info">{{ mevcutSayfa }} / {{ toplamSayfa }}</span>
+  </div>
+
+  <div class="modal-overlay" *ngIf="modalAcik" (click)="modalKapat()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <span class="modal-title"><i class="ti ti-plus"></i>Yeni kayıt ekle</span>
+        <button class="close-btn" (click)="modalKapat()"><i class="ti ti-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group"><label>İsim</label><input class="form-input" type="text" placeholder="Kişinin adını girin" [(ngModel)]="yeniKayit.isim" /></div>
+        <div class="form-group"><label>Borç miktarı (₺)</label><input class="form-input" type="number" placeholder="0.00" [(ngModel)]="yeniKayit.borcMiktari" /></div>
+        <input class="form-input" type="date" [(ngModel)]="yeniKayit.tarih" />
+        <span style="font-size:11px;color:#3a5a80;margin-top:2px;">Boş bırakılırsa bugünün tarihi kullanılır</span>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="modalKapat()">İptal</button>
+        <button class="btn-save" (click)="kaydet()"><i class="ti ti-check"></i> Kaydet</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" *ngIf="silModalAcik" (click)="silModalKapat()">
+    <div class="modal" style="max-width:360px" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <span class="modal-title"><i class="ti ti-trash" style="color:#e24b4a"></i>Kaydı sil</span>
+        <button class="close-btn" (click)="silModalKapat()"><i class="ti ti-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="color:#c8ddf5;font-size:14px;">Bu kaydı silmek istediğinizden emin misiniz?</p>
+        <p style="color:#5a8fd4;font-size:13px;margin-top:6px;">Bu işlem geri alınamaz.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="silModalKapat()">İptal</button>
+        <button class="btn-delete" (click)="silOnayla()"><i class="ti ti-trash"></i> Sil</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" *ngIf="borcOdeModalAcik" (click)="borcOdeKapat()">
+    <div class="modal" style="max-width:420px" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <span class="modal-title"><i class="ti ti-coin" style="color:#1d9e75"></i>Borç öde — {{ seciliKayit?.isim }}</span>
+        <button class="close-btn" (click)="borcOdeKapat()"><i class="ti ti-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="info-box">
+          <span class="info-label">Toplam borç</span>
+          <span class="info-value">₺{{ seciliKayit?.borcMiktari | number:'1.2-2' }}</span>
+        </div>
+        <div class="form-group">
+          <label>Ödenecek miktar (₺)</label>
+          <input class="form-input" type="number" placeholder="0.00" [(ngModel)]="odenenMiktar" [max]="seciliKayit?.borcMiktari ?? null" min="0" />
+        </div>
+        <div class="divider">veya</div>
+        <button class="btn-full" (click)="borcOde(true)"><i class="ti ti-checks"></i>Hepsini öde (₺{{ seciliKayit?.borcMiktari | number:'1.2-2' }})</button>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="borcOdeKapat()">İptal</button>
+        <button class="btn-save" (click)="borcOde(false)"><i class="ti ti-check"></i>Kaydet</button>
+      </div>
+    </div>
+  </div>
+</div>

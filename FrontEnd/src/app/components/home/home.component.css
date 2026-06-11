@@ -1,0 +1,31 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.page { background: #0a1628; min-height: 100vh; padding: 24px; }
+.page-header { margin-bottom: 24px; }
+.page-title { font-size: 16px; font-weight: 500; color: #e8f0fe; }
+.page-title i { font-size: 16px; vertical-align: -2px; margin-right: 6px; }
+.db-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.db-card { background: #0d1f3c; border: 1px solid #1e3a5f; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.db-title { font-size: 13px; font-weight: 500; color: #5a8fd4; align-self: flex-start; display: flex; align-items: center; gap: 6px; }
+.db-title i { font-size: 16px; }
+.donut-wrap { position: relative; width: 160px; height: 160px; }
+.donut-wrap svg { width: 160px; height: 160px; }
+.donut-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+.donut-pct { font-size: 22px; font-weight: 500; color: #e8f0fe; }
+.donut-lbl { font-size: 11px; color: #5a8fd4; }
+.db-stats { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+.stat-row { display: flex; align-items: center; gap: 10px; }
+.stat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.stat-label { font-size: 12px; color: #5a8fd4; flex: 1; }
+.stat-value { font-size: 13px; font-weight: 500; color: #e8f0fe; }
+.stat-total { display: flex; align-items: center; gap: 10px; border-top: 1px solid #1e3a5f; padding-top: 10px; }
+.balance-card { margin-top: 20px; background: #0d1f3c; border: 1px solid #1e3a5f; border-radius: 12px; padding: 20px 24px; display: flex; align-items: center; }
+.balance-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.balance-label { font-size: 12px; color: #5a8fd4; display: flex; align-items: center; gap: 5px; }
+.balance-label i { font-size: 14px; }
+.balance-value { font-size: 20px; font-weight: 500; color: #e8f0fe; }
+.balance-value.blue { color: #85b7eb; }
+.balance-value.green { color: #5dcaa5; }
+.balance-value.pozitif { color: #5dcaa5; }
+.balance-value.negatif { color: #e24b4a; }
+.balance-divider { width: 1px; height: 48px; background: #1e3a5f; flex-shrink: 0; }
+.loading { display: flex; align-items: center; gap: 8px; color: #5a8fd4; font-size: 13px; justify-content: center; padding: 40px; }

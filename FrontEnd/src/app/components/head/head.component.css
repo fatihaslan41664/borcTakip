@@ -1,0 +1,84 @@
+.zm-header {
+    background: #0a1628;
+    border-bottom: 1px solid #1e3a5f;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.zm-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.zm-logo-icon {
+    width: 36px;
+    height: 36px;
+    background: #1a3a6b;
+    border: 1px solid #2d5a9e;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zm-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.zm-company {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e8f0fe;
+    letter-spacing: 0.04em;
+}
+
+.zm-subtitle {
+    font-size: 9px;
+    color: #5a8fd4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.zm-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.zm-nav a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #8badd4;
+    text-decoration: none;
+    border: 0.5px solid transparent;
+    transition: all 0.15s;
+}
+
+.zm-nav a:hover {
+    background: #1a2d4a;
+    color: #c8ddf5;
+    border-color: #2d5a9e;
+}
+
+.zm-nav a.active {
+    background: #1a3a6b;
+    color: #e8f0fe;
+    border-color: #2d5a9e;
+}
+
+.zm-divider {
+    width: 1px;
+    height: 20px;
+    background: #1e3a5f;
+    margin: 0 6px;
+}

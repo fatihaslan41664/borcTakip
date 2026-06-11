@@ -9,3 +9,4 @@ C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\refint\Entities.dll
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\Entities.pdb
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\ref\Entities.dll
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Entities\obj\Debug\net9.0\Entities.sourcelink.json

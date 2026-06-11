@@ -1,1 +1,69 @@
-<p>verilmisverilecekler works!</p>
+<div class="page">
+  <div class="page-header">
+    <span class="page-title"><i class="ti ti-circle-check" style="color:#1d9e75"></i>Alınmış borçlar</span>
+    <div class="page-actions">
+      <span class="page-count">Toplam {{ filtrelenmis.length }} kayıt</span>
+      <div class="search-wrap">
+        <i class="ti ti-search"></i>
+        <input class="search-input" type="text" placeholder="İsim ara..." [(ngModel)]="aramaMetni" (input)="ara()" />
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>İsim</th>
+          <th>Ödenen miktar</th>
+          <th>Ödeme tarihi</th>
+          <th>Durum</th>
+          <th>#</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="sayfadakiKayitlar.length === 0"><td colspan="6" class="empty">Sonuç bulunamadı</td></tr>
+        <tr *ngFor="let item of sayfadakiKayitlar; let i = index">
+          <td><div class="name-cell"><span class="avatar">{{ initials(item.isim) }}</span>{{ item.isim }}</div></td>
+          <td><span class="amount">₺{{ item.odenenMiktar | number:'1.2-2' }}</span></td>
+          <td><span class="date">{{ item.odemeTarihi | date:'dd.MM.yyyy' }}</span></td>
+          <td>
+            <span class="badge badge-success" *ngIf="tamamenOdendi(item)"><i class="ti ti-check"></i> Ödendi</span>
+            <span class="badge badge-warning" *ngIf="!tamamenOdendi(item)"><i class="ti ti-clock"></i> Kısmi ödeme</span>
+          </td>
+          <td>{{ (mevcutSayfa - 1) * sayfaBasiKayit + i + 1 }}</td>
+          <td>
+            <div class="actions">
+              <button class="action-btn delete" title="Sil" (click)="silAc(item.id)"><i class="ti ti-trash"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination" *ngIf="toplamSayfa > 1">
+    <button class="pg-btn" (click)="sayfaDegistir(mevcutSayfa - 1)" [disabled]="mevcutSayfa === 1">‹</button>
+    <button class="pg-btn" *ngFor="let p of sayfalar()" [class.active]="p === mevcutSayfa" (click)="sayfaDegistir(p)">{{ p }}</button>
+    <button class="pg-btn" (click)="sayfaDegistir(mevcutSayfa + 1)" [disabled]="mevcutSayfa === toplamSayfa">›</button>
+    <span class="pg-info">{{ mevcutSayfa }} / {{ toplamSayfa }}</span>
+  </div>
+
+  <div class="modal-overlay" *ngIf="silModalAcik" (click)="silModalKapat()">
+    <div class="modal" style="max-width:360px" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <span class="modal-title"><i class="ti ti-trash" style="color:#e24b4a"></i>Kaydı sil</span>
+        <button class="close-btn" (click)="silModalKapat()"><i class="ti ti-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="color:#c8ddf5;font-size:14px;">Bu kaydı silmek istediğinizden emin misiniz?</p>
+        <p style="color:#5a8fd4;font-size:13px;margin-top:6px;">Bu işlem geri alınamaz.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="silModalKapat()">İptal</button>
+        <button class="btn-delete" (click)="silOnayla()"><i class="ti ti-trash"></i> Sil</button>
+      </div>
+    </div>
+  </div>
+</div>

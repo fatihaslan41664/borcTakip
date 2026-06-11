@@ -150,3 +150,4 @@ C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Web\obj\Debug\net9.0\re
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Web\obj\Debug\net9.0\Web.pdb
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Web\obj\Debug\net9.0\Web.genruntimeconfig.cache
 C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Web\obj\Debug\net9.0\ref\Web.dll
+C:\Users\salih\OneDrive\Masaüstü\borctakip_pro\backend\Web\obj\Debug\net9.0\Web.sourcelink.json

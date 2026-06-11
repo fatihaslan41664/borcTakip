@@ -1,1 +1,45 @@
-<p>head works!</p>
+<header class="zm-header">
+    <a class="zm-logo" routerLink="/">
+        
+        <div class="zm-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+                <rect x="2" y="8" width="18" height="2.5" rx="1" fill="#5a8fd4" />
+                <rect x="2" y="12" width="18" height="2.5" rx="1" fill="#5a8fd4" />
+                <rect x="2" y="16" width="18" height="2.5" rx="1" fill="#3a6ab0" />
+                <rect x="2" y="4" width="18" height="2.5" rx="1" fill="#3a6ab0" />
+                <rect x="4" y="2" width="2" height="18" rx="1" fill="#2d5a9e" />
+                <rect x="16" y="2" width="2" height="18" rx="1" fill="#2d5a9e" />
+            </svg>
+        </div>
+        <div class="zm-logo-text">
+            <span class="zm-company">Zafer Metal</span>
+            <span class="zm-subtitle">Platform Izgara</span>
+        </div>
+    </a>
+
+    <nav class="zm-nav">
+        <a routerLink="/" routerLinkActive="active">
+            <i class="ti ti-arrow-down-circle"></i>
+            Ana Sayfa
+        </a>
+        
+        <a routerLink="/alinacaklar" routerLinkActive="active">
+            <i class="ti ti-arrow-down-circle"></i>
+            Alınacaklar
+        </a>
+        <a routerLink="/alinmis-alinacaklar" routerLinkActive="active">
+            <i class="ti ti-circle-check" style="color:#1d9e75"></i>
+            Tahsil edilmiş ödemeler(bize)
+        </a>
+        
+        <div class="zm-divider"></div>
+        <a routerLink="/verilecekler" routerLinkActive="active">
+            <i class="ti ti-arrow-up-circle"></i>
+            Verilecekler(öde)
+        </a>
+        <a routerLink="/verilmis-verilecekler" routerLinkActive="active">
+            <i class="ti ti-circle-check" style="color:#ef9f27"></i>
+            Ödediğimiz Borçlar
+        </a>
+    </nav>
+</header>
